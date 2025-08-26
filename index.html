@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Digital del Futuro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Enlace a la hoja de estilos externa -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4">
+
+    <div id="game-container" class="w-full max-w-4xl mx-auto">
+
+        <!-- Pantalla de Inicio -->
+        <div id="start-screen" class="text-center p-8 bg-gray-800 rounded-2xl shadow-2xl">
+            <h1 class="text-4xl md:text-5xl font-bold text-primario mb-4">Laboratorio Digital del Futuro</h1>
+            <p class="text-lg text-gray-300 mb-6 max-w-2xl mx-auto">Tu misión: desarrollar la aplicación que salvará a la humanidad de una crisis científica global. ¿Aceptas el reto?</p>
+            <div class="max-w-sm mx-auto">
+                <input type="text" id="team-name-input" placeholder="Nombre de tu equipo..." class="w-full px-4 py-3 bg-gray-700 border-2 border-gray-600 rounded-lg mb-4 text-white focus:outline-none focus:border-primario">
+                <button id="start-game-btn" class="w-full bg-primario text-white font-bold py-3 px-6 rounded-lg text-xl btn">
+                    ¡Comenzar Misión!
+                </button>
+            </div>
+        </div>
+
+        <!-- Pantalla Principal (Dashboard) -->
+        <div id="dashboard-screen" class="hidden p-6 bg-gray-800 rounded-2xl shadow-2xl">
+            <!-- Cabecera del Dashboard -->
+            <div class="flex flex-col md:flex-row justify-between items-center mb-6 border-b border-gray-700 pb-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-acento" id="dashboard-team-name"></h2>
+                    <p class="text-lg text-gray-400">Portal del Investigador</p>
+                </div>
+                <div class="text-center md:text-right mt-4 md:mt-0">
+                    <p class="text-xl font-semibold text-secundario" id="dashboard-level">Nivel: Cadete Científico</p>
+                    <p class="text-2xl font-bold" id="dashboard-points">0 Puntos</p>
+                </div>
+            </div>
+
+            <!-- Mapa de Misiones -->
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold mb-4 text-primario">Mapa de Misiones</h3>
+                <div id="missions-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Las misiones se insertarán aquí dinámicamente -->
+                </div>
+            </div>
+
+            <!-- Sala de Trofeos -->
+            <div>
+                <h3 class="text-2xl font-bold mb-4 text-digital">Sala de Trofeos</h3>
+                <div id="badges-grid" class="flex flex-wrap justify-center gap-4 bg-gray-900 p-4 rounded-lg">
+                    <!-- Las insignias se insertarán aquí dinámicamente -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Pantalla de Quiz -->
+        <div id="quiz-screen" class="hidden p-6 bg-gray-800 rounded-2xl shadow-2xl">
+            <div class="flex justify-between items-center mb-4">
+                <h2 id="quiz-title" class="text-2xl font-bold text-primario"></h2>
+                <div id="quiz-progress" class="text-lg font-semibold"></div>
+            </div>
+            <div class="bg-gray-900 p-6 rounded-lg mb-4">
+                <p id="question-text" class="text-xl md:text-2xl min-h-[6rem] flex items-center justify-center text-center"></p>
+            </div>
+            <div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Las opciones se insertarán aquí -->
+            </div>
+            <div id="feedback-message" class="mt-4 text-center text-lg font-bold h-6"></div>
+        </div>
+        
+        <!-- Pantalla de Fin de Misión -->
+        <div id="mission-end-screen" class="hidden text-center p-8 bg-gray-800 rounded-2xl shadow-2xl">
+            <h2 id="mission-end-title" class="text-4xl font-bold text-secundario mb-4">¡Misión Completada!</h2>
+            <p id="mission-end-summary" class="text-xl mb-2"></p>
+            <p id="mission-end-points" class="text-2xl font-bold text-acento mb-6"></p>
+            <div id="mission-end-badge" class="mb-6"></div>
+            <button id="back-to-dashboard-btn" class="bg-primario text-white font-bold py-3 px-8 rounded-lg text-xl btn">
+                Volver al Portal
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Enlace al script externo -->
+    <script src="script.js"></script>
+</body>
+</html>
